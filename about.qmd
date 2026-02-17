@@ -6,6 +6,8 @@ about:
     - icon: github
       text: Gitea
       href: https://git.sugerplum.uk/HomeLab/.profile
+    - text: Website Source
+      href: https://git.sugerplum.uk/HomeLab/Homepage.git
 ---
 
 This is a simple blog page made to share my passion for projects on computers. I am happy to finally get a public interface and plan on doing a lot of fun posts.
