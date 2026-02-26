@@ -16,3 +16,9 @@ Welcome, this is my server. I am **Aiden Ross**, a student of computer science a
 ## Purpose
 
 This has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.
+
+```{R}
+stats <- 10
+
+stats * 10
+```

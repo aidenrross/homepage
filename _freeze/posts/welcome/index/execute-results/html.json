@@ -1,0 +1,15 @@
+{
+  "hash": "e05bea8c18227074099c4572ed87cb3b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome To ross2006.org and sugerplum.uk\"\nauthor: \"Aiden Ross\"\ndate: \"2026-02-16\"\ncategories: [news]\n---\n\n## **Welcome to my pages.**\n\n![\\\\ Sugerplum: The American Pitbull Terrier](images/sugerplum.uk-01.jpg){width=\"526\"}\n\n*Pictured above is the source of the domain sugerplum.uk*\n\nWelcome, this is my server. I am **Aiden Ross**, a student of computer science and mathematics at **Appalachian State University**. At the time of writing this I have been working on and off on this server for about *\\~1.5 months*.\n\n## Purpose\n\nThis has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nstats <- 10\n\nstats * 10\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 100\n```\n\n\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,5 @@
+﻿com.samsung.shealth.body_composition_goal,6307003,2
+target_weight,start_time,custom,is_deleted,is_rewarded,update_time,start_body_fat,create_time,achieved_skeletal_muscle,data_version,achieved_time,start_weight,time_offset,achieved_body_fat,deviceuuid,pkg_name,start_skeletal_muscle,achieved_weight,target_skeletal_muscle,end_time,datauuid,target_body_fat
+86.1826,2024-04-08 00:11:29.446,e4639bad-45e2-407e-ae40-3aa7ad74ce1c.custom.json,1,0,2024-04-08 00:11:48.830,35.2,2024-04-08 00:11:29.454,,1,,103.9634,UTC-0400,,OKVbQxqZP/,com.sec.android.app.shealth,36.3328,,36.3328,2024-05-05 03:59:59.000,e4639bad-45e2-407e-ae40-3aa7ad74ce1c,20.0,
+,2024-04-08 00:11:48.828,163b8da1-e1e3-4325-9954-9bb9c3a47290.custom.json,1,0,2024-04-08 00:12:18.094,35.2,2024-04-08 00:11:48.836,,1,,,UTC-0400,,OKVbQxqZP/,com.sec.android.app.shealth,,,,2024-05-05 03:59:59.000,163b8da1-e1e3-4325-9954-9bb9c3a47290,20.0,
+,2024-04-08 00:12:18.072,5cd5fbb4-eba0-453d-ad40-cbbd84a00df6.custom.json,0,0,2024-05-23 01:44:00.956,35.2,2024-04-08 00:12:18.078,,1,,,UTC-0400,,OKVbQxqZP/,com.sec.android.app.shealth,,,,2024-06-02 03:59:59.000,5cd5fbb4-eba0-453d-ad40-cbbd84a00df6,20.0,
