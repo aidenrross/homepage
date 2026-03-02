@@ -7,81 +7,11 @@
     "text": "The server admin\n\n\n\ninfo\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To ross2006.org and sugerplum.uk\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Import and Analyze Phyphox CSV Data in RStudio\n\n\n\ndata\n\nstatistics\n\nphyphox\n\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nCollecting Listening Data with Apple Music\n\n\n\ndata\n\ntutorial\n\ncode\n\n\n\n\n\n\n\n\n\nFeb 22, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/aboutadmin/index.html",
-    "href": "posts/aboutadmin/index.html",
-    "title": "The server admin",
-    "section": "",
-    "text": "Lou-Lou is an amazing little American Bulldog who is energetic and quick to action. If the server goes down she’s on the case.\n\nNala is the cutest elder min-pin around with 15 years under her belt, she gives the orders around here."
-  },
-  {
-    "objectID": "posts/aboutadmin/index.html#introducing-those-who-maintain-the-server",
-    "href": "posts/aboutadmin/index.html#introducing-those-who-maintain-the-server",
-    "title": "The server admin",
-    "section": "",
-    "text": "Lou-Lou is an amazing little American Bulldog who is energetic and quick to action. If the server goes down she’s on the case.\n\nNala is the cutest elder min-pin around with 15 years under her belt, she gives the orders around here."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This is a simple blog page made to share my passion for projects on computers. I am happy to finally get a public interface and plan on doing a lot of fun posts."
-  },
-  {
-    "objectID": "posts/health/index.html",
-    "href": "posts/health/index.html",
-    "title": "Phyphox data analysis",
-    "section": "",
-    "text": "The phyphox app is a really cool way to collect your own data. You can read more about it here: phyphox\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nImport Phyphox Data\nIt is super easy to get a dataset to work with from phyphox.\n\ncollect your data.\nIn the data collection screen click the three dots in the upper right corner and click export data.\nselect CSV (Comma, decimal point) or anything you want but that one is easy to use.\nDownload the csv file and move it to you rcode project working directory.\n\nHere is some data I collected this morning on my way to class.\n\n# A short collection of gyro data\ngyro &lt;- read_csv(\"./data/gyro.csv\", show_col_types = FALSE) |&gt; \n  rename(time=`Time (s)`, xrot=`Gyroscope x (rad/s)`, yrot=`Gyroscope y (rad/s)`, zrot=`Gyroscope z (rad/s)`, absolute=`Absolute (rad/s)`)\n\n# A collection of walking data\nwalk &lt;- read_csv(\"./data/aidenr-walk.csv\", show_col_types = FALSE)\n\n\ngyro |&gt; head()\n\n# A tibble: 6 × 5\n    time    xrot   yrot     zrot absolute\n   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 0.0221 -0.0412 -0.126 -0.00550    0.132\n2 0.0243 -0.0412 -0.124 -0.00550    0.131\n3 0.0264 -0.0425 -0.131 -0.00794    0.138\n4 0.0286 -0.0425 -0.122 -0.0104     0.130\n5 0.0307 -0.0412 -0.126 -0.0104     0.133\n6 0.0329 -0.0400 -0.123 -0.00916    0.130\n\nwalk |&gt; head()\n\n# A tibble: 6 × 11\n  `Time (s)` `Latitude (°)` `Longitude (°)` `Altitude (m)` `Altitude WGS84 (m)`\n       &lt;dbl&gt;          &lt;dbl&gt;           &lt;dbl&gt;          &lt;dbl&gt;                &lt;dbl&gt;\n1    0.00669           36.2           -81.7           971.                 939.\n2    2.31              36.2           -81.7           956.                 924.\n3    3.31              36.2           -81.7           960.                 927.\n4    4.31              36.2           -81.7           959.                 927.\n5    5.31              36.2           -81.7           962.                 930.\n6    6.31              36.2           -81.7           961.                 928.\n# ℹ 6 more variables: `Speed (m/s)` &lt;dbl&gt;, `Direction (°)` &lt;dbl&gt;,\n#   `Distance (km)` &lt;dbl&gt;, `Horizontal Accuracy (m)` &lt;dbl&gt;,\n#   `Vertical Accuracy (m)` &lt;dbl&gt;, Satellites &lt;dbl&gt;\n\n\n\n\nUsage\nAfter importing the data we can use it like any other dataset in R. Here is a brief look.\nThe gyro data was collected before I left the car. This shows how it measures rotation. The shape of the graph comes from my rotation of the phone. As you see it accelerates but returns to a baseline (notice the small accelerations of my imperfect human hand and possible measurement errors at the baseline).\n\nggplot(data = gyro, aes(x = time,y = xrot)) +\n  geom_point(color=\"#ff0f00\", size = 1) +\n  labs(title = \"Gyro x vs. time\", x = \"Time (s)\", y = \"x (rad/s)\")\n\n\n\n\n\n\n\nggplot(data = gyro, aes(x = time,y = yrot)) +\n  geom_point(color=\"#00a10a\", size = 1) +\n   labs(title = \"Gyro y vs. time\", x = \"Time (s)\", y = \"y (rad/s)\")\n\n\n\n\n\n\n\nggplot(data = gyro, aes(x = time, y = zrot)) +\n    geom_point(color=\"#00a1aa\", size = 1) +\n   labs(title = \"Gyro z vs. time\", x = \"Time (s)\", y = \"z (rad/s)\")"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To ross2006.org and sugerplum.uk",
-    "section": "",
-    "text": "\\ Sugerplum: The American Pitbull Terrier\n\n\nPictured above is the source of the domain sugerplum.uk\nWelcome, this is my server. I am Aiden Ross, a student of computer science and mathematics at Appalachian State University. At the time of writing this I have been working on and off on this server for about ~1.5 months."
-  },
-  {
-    "objectID": "posts/welcome/index.html#welcome-to-my-pages.",
-    "href": "posts/welcome/index.html#welcome-to-my-pages.",
-    "title": "Welcome To ross2006.org and sugerplum.uk",
-    "section": "",
-    "text": "\\ Sugerplum: The American Pitbull Terrier\n\n\nPictured above is the source of the domain sugerplum.uk\nWelcome, this is my server. I am Aiden Ross, a student of computer science and mathematics at Appalachian State University. At the time of writing this I have been working on and off on this server for about ~1.5 months."
-  },
-  {
-    "objectID": "posts/welcome/index.html#purpose",
-    "href": "posts/welcome/index.html#purpose",
-    "title": "Welcome To ross2006.org and sugerplum.uk",
-    "section": "Purpose",
-    "text": "Purpose\nThis has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.\n\nstats &lt;- 10\n\nstats * 10\n\n[1] 100"
-  },
-  {
     "objectID": "posts/phyphox/index.html",
     "href": "posts/phyphox/index.html",
     "title": "How to Import and Analyze Phyphox CSV Data in RStudio",
     "section": "",
     "text": "The phyphox app is a really cool way to collect your own data. You can read more about it here: phyphox\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
-  },
-  {
-    "objectID": "posts/macplans1/index.html",
-    "href": "posts/macplans1/index.html",
-    "title": "2012 Mac plans",
-    "section": "",
-    "text": "Recently, I have been working on a Mac Mini 2012 and Macbook 2012. Overall, they have been easy to work with but my choice in ram has lead to issues on the Macbook. Onced resolved I may write about it here. If not, then I have some plans with ssh and ethernet subnets to share."
-  },
-  {
-    "objectID": "posts/phyphox/index.html#a-short-walk",
-    "href": "posts/phyphox/index.html#a-short-walk",
-    "title": "How to Import and Analyze Phyphox CSV Data in RStudio",
-    "section": "A short walk",
-    "text": "A short walk\nNotice the collection of data has longitude and latitude so be careful sharing this data. Here I am in a public place and recording a ~6 minute walk that is not anywhere near my home. (note: this is also useful for geometry. The earth can be seen as a sphere and this data can be converted spherical coordinates)\n\nglimpse(walk)\n\nRows: 463\nColumns: 11\n$ `Time (s)`                &lt;dbl&gt; 0.006688125, 2.309468384, 3.308960415, 4.309…\n$ `Latitude (°)`            &lt;dbl&gt; 36.21199, 36.21211, 36.21212, 36.21212, 36.2…\n$ `Longitude (°)`           &lt;dbl&gt; -81.68044, -81.68058, -81.68056, -81.68053, …\n$ `Altitude (m)`            &lt;dbl&gt; 971.3335, 955.7449, 959.6737, 959.3023, 961.…\n$ `Altitude WGS84 (m)`      &lt;dbl&gt; 939.1000, 923.5115, 927.4403, 927.0688, 929.…\n$ `Speed (m/s)`             &lt;dbl&gt; NaN, 1.82, 1.23, 1.00, 1.52, 1.22, 1.86, 1.4…\n$ `Direction (°)`           &lt;dbl&gt; NaN, 344.7, 343.8, 342.5, 345.3, 339.1, 331.…\n$ `Distance (km)`           &lt;dbl&gt; 0.01830173, 0.02052140, 0.02249722, 0.024409…\n$ `Horizontal Accuracy (m)` &lt;dbl&gt; 59.488998, 15.945315, 10.829178, 8.559190, 7…\n$ `Vertical Accuracy (m)`   &lt;dbl&gt; 8.316630, 22.363817, 16.113220, 12.936796, 1…\n$ Satellites                &lt;dbl&gt; -1, 12, 15, 19, 20, 20, 20, 21, 20, 19, 16, …\n\n\nHere is the fun part: we can use calculus and linear geometry to analyse this data.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +\n  geom_point() +\n  theme_gray()\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAbove you can see that distance is approximately a line. This means we can use the equation \\[y=mx+b\\] to help us analyse it.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +\n  geom_smooth(method=\"lm\") +\n  theme_gray()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 1 row containing non-finite outside the scale range\n(`stat_smooth()`)."
-  },
-  {
-    "objectID": "posts/phyphox/index.html#preface",
-    "href": "posts/phyphox/index.html#preface",
-    "title": "How to Import and Analyze Phyphox CSV Data in RStudio",
-    "section": "Preface",
-    "text": "Preface\nNotice the collection of data has longitude and latitude so be careful sharing this data. Here I am in a public place and recording a ~6 minute walk that is not anywhere near my home. (note: this is also useful for geometry. The earth can be seen as a sphere and this data can be converted spherical coordinates)\n\nglimpse(walk)\n\nRows: 463\nColumns: 11\n$ `Time (s)`                &lt;dbl&gt; 0.006688125, 2.309468384, 3.308960415, 4.309…\n$ `Latitude (°)`            &lt;dbl&gt; 36.21199, 36.21211, 36.21212, 36.21212, 36.2…\n$ `Longitude (°)`           &lt;dbl&gt; -81.68044, -81.68058, -81.68056, -81.68053, …\n$ `Altitude (m)`            &lt;dbl&gt; 971.3335, 955.7449, 959.6737, 959.3023, 961.…\n$ `Altitude WGS84 (m)`      &lt;dbl&gt; 939.1000, 923.5115, 927.4403, 927.0688, 929.…\n$ `Speed (m/s)`             &lt;dbl&gt; NaN, 1.82, 1.23, 1.00, 1.52, 1.22, 1.86, 1.4…\n$ `Direction (°)`           &lt;dbl&gt; NaN, 344.7, 343.8, 342.5, 345.3, 339.1, 331.…\n$ `Distance (km)`           &lt;dbl&gt; 0.01830173, 0.02052140, 0.02249722, 0.024409…\n$ `Horizontal Accuracy (m)` &lt;dbl&gt; 59.488998, 15.945315, 10.829178, 8.559190, 7…\n$ `Vertical Accuracy (m)`   &lt;dbl&gt; 8.316630, 22.363817, 16.113220, 12.936796, 1…\n$ Satellites                &lt;dbl&gt; -1, 12, 15, 19, 20, 20, 20, 21, 20, 19, 16, …\n\n\nHere is the fun part: we can use calculus and linear geometry to analyse this data.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +\n  geom_point() +\n  theme_gray()\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAbove you can see that distance is approximately a line. This means we can use the equation \\[y=mx+b\\] to help us analyse it.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +\n  geom_smooth(method=\"lm\") +\n  theme_gray()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 1 row containing non-finite outside the scale range\n(`stat_smooth()`)."
   },
   {
     "objectID": "posts/phyphox/index.html#gps-safety",
@@ -103,6 +33,27 @@
     "title": "How to Import and Analyze Phyphox CSV Data in RStudio",
     "section": "Linear Equations",
     "text": "Linear Equations\nHere is the fun part: we can use calculus and linear geometry to analyse this data.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`, color=`Direction (°)`)) +\n  geom_point() +\n  theme_gray()\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAbove you can see that distance is approximately a line. This means we can use the equation \\[y=mx+b\\] to help us analyse it. After observing the graph we can tell my walk was at roughly a constant speed and direction.\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +\n  geom_smooth(method=\"lm\") +\n  theme_gray()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 1 row containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\n\n\n\n\n\n\n\nNow, how do we get the slope of this line? Well, rcode can do this for us. You can also do it the old fashion way if you want.\n\nsummary(lm(`Distance (km)` ~ `Time (s)`, data=walk))\n\n\nCall:\nlm(formula = `Distance (km)` ~ `Time (s)`, data = walk)\n\nResiduals:\n       Min         1Q     Median         3Q        Max \n-0.0138009 -0.0021663  0.0009866  0.0040016  0.0176067 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 9.974e-03  5.054e-04   19.74   &lt;2e-16 ***\n`Time (s)`  1.673e-03  1.890e-06  885.54   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.005417 on 460 degrees of freedom\n  (1 observation deleted due to missingness)\nMultiple R-squared:  0.9994,    Adjusted R-squared:  0.9994 \nF-statistic: 7.842e+05 on 1 and 460 DF,  p-value: &lt; 2.2e-16\n\n\n\nggplot(data=walk, aes(x=`Time (s)`, y=`Altitude (m)`, color=`Vertical Accuracy (m)`)) +\n  geom_point() +\n  geom_smooth(method=\"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a simple blog page made to share my passion for projects on computers. I am happy to finally get a public interface and plan on doing a lot of fun posts."
+  },
+  {
+    "objectID": "posts/aboutadmin/index.html",
+    "href": "posts/aboutadmin/index.html",
+    "title": "The server admin",
+    "section": "",
+    "text": "Lou-Lou is an amazing little American Bulldog who is energetic and quick to action. If the server goes down she’s on the case.\n\nNala is the cutest elder min-pin around with 15 years under her belt, she gives the orders around here."
+  },
+  {
+    "objectID": "posts/aboutadmin/index.html#introducing-those-who-maintain-the-server",
+    "href": "posts/aboutadmin/index.html#introducing-those-who-maintain-the-server",
+    "title": "The server admin",
+    "section": "",
+    "text": "Lou-Lou is an amazing little American Bulldog who is energetic and quick to action. If the server goes down she’s on the case.\n\nNala is the cutest elder min-pin around with 15 years under her belt, she gives the orders around here."
   },
   {
     "objectID": "posts/musicdata/index.html",
@@ -133,45 +84,24 @@
     "text": "ggplot(data=ghost, aes(x=`Time`/60,y=`Plays`,color=`Name`)) +\n  geom_point(size=3) +\n  geom_smooth(method=\"lm\", se=FALSE, color=\"black\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nghost &lt;- ghost |&gt; \n  mutate(minutes=`Time`/60)\n\nghost_mod &lt;- lm(Plays ~ minutes, data=ghost) \nghost_mod |&gt; \n  get_regression_table()\n\n# A tibble: 2 × 7\n  term      estimate std_error statistic p_value lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 intercept   32.9        52.4     0.628   0.547    -87.9    154. \n2 minutes      0.966      11.1     0.087   0.933    -24.5     26.5\n\nghost_mod |&gt; \n  get_regression_summaries() \n\n# A tibble: 1 × 9\n  r_squared adj_r_squared   mse  rmse sigma statistic p_value    df  nobs\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     0.001        -0.124  592.  24.3  27.2     0.008   0.933     1    10"
   },
   {
-    "objectID": "posts/theming/index.html",
-    "href": "posts/theming/index.html",
-    "title": "Test Article",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To ross2006.org and sugerplum.uk",
     "section": "",
-    "text": "Rcpp::cppFunction('\nlong long square(long long value){\n  \n  return value * value;\n}')\n\nsquare(10)\n\n[1] 100\n\n\n\n\n\n\nlibrary(Rmpfr)\n\nprecBits &lt;- 1e3\n\nprecBits\n\n[1] 1000\n\n\n\npi_mpfr &lt;- Const(\"pi\", precBits)\n\npi_mpfr\n\n1 'mpfr' number of precision  1000   bits \n[1] 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412736"
+    "text": "\\ Sugerplum: The American Pitbull Terrier\n\n\nPictured above is the source of the domain sugerplum.uk\nWelcome, this is my server. I am Aiden Ross, a student of computer science and mathematics at Appalachian State University. At the time of writing this I have been working on and off on this server for about ~1.5 months."
   },
   {
-    "objectID": "posts/theming/index.html#simple-method",
-    "href": "posts/theming/index.html#simple-method",
-    "title": "Test Article",
+    "objectID": "posts/welcome/index.html#welcome-to-my-pages.",
+    "href": "posts/welcome/index.html#welcome-to-my-pages.",
+    "title": "Welcome To ross2006.org and sugerplum.uk",
     "section": "",
-    "text": "Rcpp::cppFunction('\nlong long square(long long value){\n  \n  return value * value;\n}')\n\nsquare(10)\n\n[1] 100"
+    "text": "\\ Sugerplum: The American Pitbull Terrier\n\n\nPictured above is the source of the domain sugerplum.uk\nWelcome, this is my server. I am Aiden Ross, a student of computer science and mathematics at Appalachian State University. At the time of writing this I have been working on and off on this server for about ~1.5 months."
   },
   {
-    "objectID": "posts/theming/index.html#test-global-vars-cpp",
-    "href": "posts/theming/index.html#test-global-vars-cpp",
-    "title": "Test Article",
-    "section": "",
-    "text": "library(Rmpfr)\n\nprecBits &lt;- 1e3\n\nprecBits\n\n[1] 1000\n\n\n\npi_mpfr &lt;- Const(\"pi\", precBits)\n\npi_mpfr\n\n1 'mpfr' number of precision  1000   bits \n[1] 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412736"
-  },
-  {
-    "objectID": "posts/accel1/index.html",
-    "href": "posts/accel1/index.html",
-    "title": "Collecting driving data:",
-    "section": "",
-    "text": "Phyphox wikipedia: Acceleration(without g)"
-  },
-  {
-    "objectID": "posts/accel1/index.html#absolute-acceleration",
-    "href": "posts/accel1/index.html#absolute-acceleration",
-    "title": "Collecting driving data:",
-    "section": "Absolute Acceleration",
-    "text": "Absolute Acceleration\n\naccel &lt;- accel |&gt;\n  filter(abs &lt; 14) # remove outliers\n\nggplot(accel, aes(x = time, y = abs)) +\n  geom_jitter(color = \"#0ff0c0\") +\n  labs(title = \"Abs. Acceleration vs Time\", x = \"Time (s)\", y = \"Absolute Acceleration (m/s^2)\") +\n  theme_bw()"
-  },
-  {
-    "objectID": "posts/accel1/index.html#linear-acceleration",
-    "href": "posts/accel1/index.html#linear-acceleration",
-    "title": "Collecting driving data:",
-    "section": "Linear Acceleration",
-    "text": "Linear Acceleration\n\nggplot(accel, aes(x = time, y = x, color = abs)) +\n  geom_smooth(method = \"loess\", span = 0.05, se = FALSE)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\nggplot(accel, aes(x = time, y = y)) +\n  geom_smooth(method = \"loess\", span = 0.05, se = FALSE)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(accel, aes(x = time, y = z)) +\n  geom_smooth(method = \"loess\", span = 0.05, se = FALSE)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nSummary data:\n\naccel_summary &lt;- tibble(mean_x = mean(accel$x), mean_y = mean(accel$y), mean_z = mean(accel$z))\n\naccel_summary\n\n# A tibble: 1 × 3\n  mean_x  mean_y    mean_z\n   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 0.0138 -0.0955 -0.000834"
+    "objectID": "posts/welcome/index.html#purpose",
+    "href": "posts/welcome/index.html#purpose",
+    "title": "Welcome To ross2006.org and sugerplum.uk",
+    "section": "Purpose",
+    "text": "Purpose\nThis has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.\n\nstats &lt;- 10\n\nstats * 10\n\n[1] 100"
   }
 ]
