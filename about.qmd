@@ -4,7 +4,7 @@ about:
   template: jolla
   links:
     - icon: github
-      text: Gitea
+      text: Gitea:
       href: https://git.sugerplum.uk/HomeLab/.profile
     - text: Website Source
       icon: github
