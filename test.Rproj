@@ -6,10 +6,16 @@ AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
 UseSpacesForTab: Yes
-NumSpacesForTab: 2
+NumSpacesForTab: 4
 Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+
+UseNativePipeOperator: Yes
+
+PythonType: virtualenv
+PythonVersion: 3.12.12
+PythonPath: ~/.cache/R/reticulate/uv/cache/archive-v0/J9kAtTC95cw5fJwKu9xcF/bin/python
 
 ProjectName: Homepage

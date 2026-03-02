@@ -1,0 +1,15 @@
+{
+  "hash": "9d3a9ea66a5ae3b7bfffabe4a1b4f528",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Simulation 1\"\ndraft: true\ndraft_mode: unlinked\nformat: html\n---\n\n\n::: {.cell}\n\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

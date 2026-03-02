@@ -1,0 +1,82 @@
+---
+title: "Collecting driving data:"
+subtitle: "Acceleration without gravity"
+author: "Aiden R. Ross"
+draft: true
+draft-mode: unlinked
+format: 
+  html: 
+    theme: pulse
+execute: 
+  freeze: true
+  cache: true
+---
+
+[Phyphox wikipedia: Acceleration(without g)](https://phyphox.org/wiki/index.php/Sensor:_Acceleration_(without_g))
+
+# Import Data
+
+The code below imports a .csv file exported from **Phyphox**.
+
+```{r}
+#| label: import data
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(zoo)
+
+accel <- read_csv("data/acceleration/Raw Data.csv", show_col_types = FALSE) |>
+  rename(
+    time = `Time (s)`,
+    x = `Linear Acceleration x (m/s^2)`,
+    y = `Linear Acceleration y (m/s^2)`,
+    z = `Linear Acceleration z (m/s^2)`,
+    abs = "Absolute acceleration (m/s^2)"
+  )
+
+accel |>
+  head() |>
+  kable()
+```
+
+# Visualisation
+
+Let's start out with some simple graphs.
+
+## Absolute Acceleration
+
+```{r}
+accel <- accel |>
+  filter(abs < 14) # remove outliers
+
+ggplot(accel, aes(x = time, y = abs)) +
+  geom_jitter(color = "#0ff0c0") +
+  labs(title = "Abs. Acceleration vs Time", x = "Time (s)", y = "Absolute Acceleration (m/s^2)") +
+  theme_bw()
+```
+
+## Linear Acceleration
+
+```{r}
+ggplot(accel, aes(x = time, y = x, color = abs)) +
+  geom_smooth(method = "loess", span = 0.05, se = FALSE)
+
+ggplot(accel, aes(x = time, y = y)) +
+  geom_smooth(method = "loess", span = 0.05, se = FALSE)
+```
+
+```{r}
+ggplot(accel, aes(x = time, y = z)) +
+  geom_smooth(method = "loess", span = 0.05, se = FALSE)
+```
+
+Summary data:
+
+```{r}
+accel_summary <- tibble(mean_x = mean(accel$x), mean_y = mean(accel$y), mean_z = mean(accel$z))
+
+accel_summary
+```

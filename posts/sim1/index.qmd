@@ -1,0 +1,33 @@
+---
+title: "Simulation 1"
+draft: true
+draft_mode: unlinked
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(moderndive)
+data <- read_csv("gyro.csv") |>
+    janitor::clean_names()
+
+data |> 
+    head() |> 
+    knitr::kable()
+```
+```{r}
+ggplot(data, aes(x=time_s, y=absolute_rad_s)) +
+    geom_line() +
+    geom_smooth(method="lm", se=FALSE)
+```
+```{r}
+mean_acc <- data |> 
+    select(absolute_rad_s) |> 
+    summarise(mean_acc=mean(absolute_rad_s)) |> 
+    pull()
+
+prec <- 0.0012
+data |> 
+    select(absolute_rad_s) |>
+    filter(absolute_rad_s < mean_acc + prec & absolute_rad_s > mean_acc - prec)
+```

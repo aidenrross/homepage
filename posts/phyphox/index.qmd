@@ -66,7 +66,7 @@ GPS data sets have precise **longitude** and **latitude** values. Share raw data
 
 ## Data Source
 
-In this set I am in a public place and recording a **~6 minute** walk that is not anywhere near my home. 
+In this set I am in a public place and recording a **\~6 minute** walk that is not anywhere near my home.
 
 ```{r}
 # show a data sample
@@ -75,7 +75,7 @@ glimpse(walk)
 
 ## Linear Equations
 
-Here is the fun part: we can use calculus and linear geometry to analyse this data. 
+Here is the fun part: we can use calculus and linear geometry to analyse this data.
 
 ```{r}
 
@@ -85,18 +85,20 @@ ggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`, color=`Direction (°)`)) 
 
 ```
 
-Above you can see that distance is approximately a line. This means we can use the equation $$y=mx+b$$ to help us analyse it. After observing the graph we can tell my walk was at roughly a constant speed and direction.  
+Above you can see that distance is approximately a line. This means we can use the equation $$y=mx+b$$ to help us analyse it. After observing the graph we can tell my walk was at roughly a constant speed and direction.
 
 ```{r}
 ggplot(data=walk, aes(x=`Time (s)`, y=`Distance (km)`)) +
   geom_smooth(method="lm") +
   theme_gray()
 ```
+
 Now, how do we get the slope of this line? Well, rcode can do this for us. You can also do it the old fashion way if you want.
 
 ```{r}
 summary(lm(`Distance (km)` ~ `Time (s)`, data=walk))
 ```
+
 ```{r}
 ggplot(data=walk, aes(x=`Time (s)`, y=`Altitude (m)`, color=`Vertical Accuracy (m)`)) +
   geom_point() +

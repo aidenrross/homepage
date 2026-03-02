@@ -8,11 +8,9 @@ format:
   html:
     theme: cerulean
 ---
+# Rcpp usage
 
-```{r}
-mySample <- rbinom(100000000, 5, 1/2)
-mean(mySample)
-```
+## Simple method 
 
 ```{r}
 Rcpp::cppFunction('
@@ -23,6 +21,9 @@ long long square(long long value){
 
 square(10)
 ```
+
+## Test global vars cpp
+
 
 ```{r}
 #| message: false
