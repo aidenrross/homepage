@@ -15,11 +15,13 @@ data |>
     head() |> 
     knitr::kable()
 ```
+
 ```{r}
 ggplot(data, aes(x=time_s, y=absolute_rad_s)) +
     geom_line() +
     geom_smooth(method="lm", se=FALSE)
 ```
+
 ```{r}
 mean_acc <- data |> 
     select(absolute_rad_s) |> 
