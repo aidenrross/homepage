@@ -7,7 +7,7 @@ categories: [news]
 
 ## **Welcome to my pages.**
 
-![\\ Sugerplum: The American Pitbull Terrier](images/sugerplum.uk-01.jpg){width="526"}
+![\\ Sugarplum: The American Pitbull Terrier](images/sugerplum.uk-01.jpg){width="526"}
 
 *Pictured above is the source of the domain sugerplum.uk*
 
@@ -16,9 +16,3 @@ Welcome, this is my server. I am **Aiden Ross**, a student of computer science a
 ## Purpose
 
 This has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.
-
-```{R}
-stats <- 10
-
-stats * 10
-```
