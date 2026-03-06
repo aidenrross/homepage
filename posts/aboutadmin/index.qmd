@@ -9,8 +9,8 @@ categories: [info]
 
 **Lou-Lou** is an amazing little **American Bulldog** who is energetic and quick to action. If the server goes down she's on the case.
 
-![](images/LouLou.admin.jpg){width="515"}
+![](images/loulou_small.jpg){width="515"}
 
 **Nala** is the cutest elder **min-pin** around with 15 years under her belt, she gives the orders around here.
 
-![](images/Nala.admin.jpg){width="515"}
+![](images/nala_small.jpg){width="515"}

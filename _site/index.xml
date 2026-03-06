@@ -845,9 +845,9 @@ colour.
 <section id="introducing-those-who-maintain-the-server" class="level2">
 <h2 class="anchored" data-anchor-id="introducing-those-who-maintain-the-server">Introducing those who maintain the server</h2>
 <p><strong>Lou-Lou</strong> is an amazing little <strong>American Bulldog</strong> who is energetic and quick to action. If the server goes down she’s on the case.</p>
-<p><img src="https://homepage.sugerplum.uk/posts/aboutadmin/images/LouLou.admin.jpg" class="img-fluid" width="515"></p>
+<p><img src="https://homepage.sugerplum.uk/posts/aboutadmin/images/loulou_small.jpg" class="img-fluid" width="515"></p>
 <p><strong>Nala</strong> is the cutest elder <strong>min-pin</strong> around with 15 years under her belt, she gives the orders around here.</p>
-<p><img src="https://homepage.sugerplum.uk/posts/aboutadmin/images/Nala.admin.jpg" class="img-fluid" width="515"></p>
+<p><img src="https://homepage.sugerplum.uk/posts/aboutadmin/images/nala_small.jpg" class="img-fluid" width="515"></p>
 
 
 </section>
@@ -871,8 +871,8 @@ colour.
 <h2 class="anchored" data-anchor-id="welcome-to-my-pages."><strong>Welcome to my pages.</strong></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://homepage.sugerplum.uk/posts/welcome/images/sugerplum.uk-01.jpg" class="img-fluid figure-img" width="526"></p>
-<figcaption>\ Sugerplum: The American Pitbull Terrier</figcaption>
+<p><img src="https://homepage.sugerplum.uk/posts/welcome/images/sugarplum_small.jpg" class="img-fluid figure-img"></p>
+<figcaption>Sugarplum: The American Pitbull</figcaption>
 </figure>
 </div>
 <p><em>Pictured above is the source of the domain sugerplum.uk</em></p>
@@ -881,22 +881,6 @@ colour.
 <section id="purpose" class="level2">
 <h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
 <p>This has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">stats <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span></span>
-<span id="cb1-2"></span>
-<span id="cb1-3">stats <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span></span></code></pre></div></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 100</code></pre>
-</div>
-</div>
 
 
 </section>
