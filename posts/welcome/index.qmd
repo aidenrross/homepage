@@ -7,7 +7,7 @@ categories: [news]
 
 ## **Welcome to my pages.**
 
-![\\ Sugarplum: The American Pitbull Terrier](images/sugerplum.uk-01.jpg){width="526"}
+![Sugarplum: The American Pitbull](images/sugarplum_small.jpg)
 
 *Pictured above is the source of the domain sugerplum.uk*
 
