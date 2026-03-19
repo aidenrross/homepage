@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Aiden’s server",
     "section": "",
-    "text": "The server admin\n\n\n\ninfo\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To ross2006.org and sugerplum.uk\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Import and Analyze Phyphox CSV Data in RStudio\n\n\n\ndata\n\nstatistics\n\nphyphox\n\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nCollecting Listening Data with Apple Music\n\n\n\ndata\n\ntutorial\n\ncode\n\n\n\n\n\n\n\n\n\nFeb 22, 2026\n\n\n\n\n\nNo matching items"
+    "text": "The server admin\n\n\n\ninfo\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To ross2006.org and sugerplum.uk\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 16, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Import and Analyze Phyphox CSV Data in RStudio\n\n\n\ndata\n\nstatistics\n\nphyphox\n\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nCollecting Listening Data with Apple Music\n\n\n\ndata\n\ntutorial\n\ncode\n\n\n\n\n\n\n\n\n\nFeb 22, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Code Style Guide\n\n\n\n\n\n\n\n\nMar 6, 2026\n\n\nAiden Ross\n\n\n\n\n\n\n\n\n\n\n\n\nGhost Listening Report\n\n\n\nghost\n\ndata\n\ncode\n\n\n\n\n\n\n\n\n\nMar 15, 2026\n\n\nAiden Ross\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/phyphox/index.html",
@@ -103,5 +103,54 @@
     "title": "Welcome To ross2006.org and sugerplum.uk",
     "section": "Purpose",
     "text": "Purpose\nThis has been a project for education, personal utility, and fun. Currently, I have quickly expanded to hosting many cloud alternatives."
+  },
+  {
+    "objectID": "posts/rcode-style/index.html",
+    "href": "posts/rcode-style/index.html",
+    "title": "Blog Code Style Guide",
+    "section": "",
+    "text": "This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent."
+  },
+  {
+    "objectID": "posts/rcode-style/index.html#single-char-names",
+    "href": "posts/rcode-style/index.html#single-char-names",
+    "title": "Blog Code Style Guide",
+    "section": "single char names",
+    "text": "single char names\nOften, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.\n\n# simplistic for short code \n\nx &lt;- 10\nx \n\n[1] 10"
+  },
+  {
+    "objectID": "posts/rcode-style/index.html#snake-case",
+    "href": "posts/rcode-style/index.html#snake-case",
+    "title": "Blog Code Style Guide",
+    "section": "snake case",
+    "text": "snake case\nSnake case is usually clear and easy to read for short blocks of code.\n\n# be specific given some context\nsome_variable &lt;- 1203\n\nsome_variable\n\n[1] 1203"
+  },
+  {
+    "objectID": "posts/rcode-style/index.html#pascal-case",
+    "href": "posts/rcode-style/index.html#pascal-case",
+    "title": "Blog Code Style Guide",
+    "section": "pascal case",
+    "text": "pascal case\nPascal case is preferred for functions in rcode.\n\n# a function name should state its purpose\n# also do note that this primarily\n# is to be able to tell functions I write from library functions\nSquaredValue &lt;- function(x) {\n    return (x * x)\n}\n\nSquaredValue(5)\n\n[1] 25"
+  },
+  {
+    "objectID": "posts/tegra_k1/index.html",
+    "href": "posts/tegra_k1/index.html",
+    "title": "What can a Tegra K1 do in 2026?",
+    "section": "",
+    "text": "Overview\nFirst, I have attached an image of the board below.\n\n\n\nThe TEGRA K1 board.\n\n\nAt the time this little board pushed a full desktop architecture for its GPU. (NVIDIA 2013)\n\nTegra K1\n\nCortex A15 4-PLUS-1 processor\nKeplar GPU with 192 Cuda cores\n2 GB ram\nSupport for opengl 4.4\nSupport for CUDA 6.6\nSupport for DirectX 11\n\n\n\n\nGaming\nNvidia with this board claimed it was more powerful than the xbox360 and ps3(without accounting for spus) (see TegraWhitePages?). I would like to test this claim; I will account for the overhead in processing for arm and linux compatibility from windows titles.\n\n\n\n\n\nReferences\n\nNVIDIA. 2013. “Whitepaper-NVIDIA Tegra K1-a New Era in Mobile Computing.” 2013. https://www.nvidia.com/content/PDF/tegra_white_papers/tegra-K1-whitepaper.pdf."
+  },
+  {
+    "objectID": "posts/ghost1/index.html",
+    "href": "posts/ghost1/index.html",
+    "title": "Ghost Listening Report",
+    "section": "",
+    "text": "Data Analysis\nImport any needed libraries.\n\nlibrary(tidyverse)\nlibrary(dplyr)\nlibrary(knitr)\nlibrary(moderndive)\n\nAs usual I import the data from my apple music.\n\nghost &lt;- read_tsv(\"Ghost.txt\", show_col_types = FALSE)\n\n# cleanup data\nghost &lt;- ghost |&gt; \n    janitor::clean_names() |&gt; \n    janitor::remove_empty() |&gt; \n    filter(!is.na(plays), plays &gt; 0) |&gt; \n    filter(!is.na(duration), !is.na(plays)) |&gt; \n    rename(duration = time)\n\nvalue for \"which\" not specified, defaulting to c(\"rows\", \"cols\")\n\n\nWarning: There was 1 warning in `filter()`.\nℹ In argument: `!is.na(duration)`.\nCaused by warning in `is.na()`:\n! is.na() applied to non-(list or vector) of type 'closure'\n\nghost |&gt; \n  head()\n\n# A tibble: 6 × 22\n  name        artist composer album genre   size duration disc_number disc_count\n  &lt;chr&gt;       &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;\n1 Imperium    Ghost  A Ghoul… IMPE… Metal 4.10e6      100           1          1\n2 Kaisarion   Ghost  A Ghoul… IMPE… Metal 1.08e7      302           1          1\n3 Spillways   Ghost  A Ghoul… IMPE… Metal 7.46e6      196           1          1\n4 Call Me Li… Ghost  A Ghoul… IMPE… Metal 1.07e7      284           1          1\n5 Hunter’s M… Ghost  A Ghoul… IMPE… Metal 7.58e6      196           1          1\n6 Watcher In… Ghost  A Ghoul… IMPE… Metal 1.27e7      348           1          1\n# ℹ 13 more variables: track_number &lt;dbl&gt;, track_count &lt;dbl&gt;, year &lt;dbl&gt;,\n#   date_modified &lt;chr&gt;, date_added &lt;chr&gt;, bit_rate &lt;dbl&gt;, sample_rate &lt;dbl&gt;,\n#   kind &lt;chr&gt;, plays &lt;dbl&gt;, last_played &lt;chr&gt;, skips &lt;dbl&gt;,\n#   last_skipped &lt;chr&gt;, location &lt;chr&gt;\n\n\nPlot the data in a histogram.\n\nggplot(ghost, aes(x=plays, fill=album)) +\n    geom_histogram(binwidth=5, na.rm = TRUE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe data is significantly right-skewed, therefore, the median will likely be more accurate here.\n\n\nNext, I create a table of some useful values.\n\nghost &lt;- ghost |&gt; \n  mutate(total_seconds = duration * plays)\nghost |&gt;\n  summarise(\n    meadian_plays = median(plays),\n    mean_plays = mean(plays),\n    total_plays = sum(plays),\n    total_hours = sum(total_seconds, na.rm = TRUE) / 3600\n  ) |&gt; \n  kable()\n\n\n\n\nmeadian_plays\nmean_plays\ntotal_plays\ntotal_hours\n\n\n\n\n5\n27.91525\n1647\n117.8828"
+  },
+  {
+    "objectID": "posts/march-ghost-report/index.html",
+    "href": "posts/march-ghost-report/index.html",
+    "title": "Ghost Listening Report",
+    "section": "",
+    "text": "Data Analysis\nImport any needed libraries.\n\nlibrary(tidyverse)\nlibrary(dplyr)\nlibrary(knitr)\nlibrary(moderndive)\n\nAs usual I import the data from my apple music.\n\nghost &lt;- read_tsv(\"Ghost.txt\", show_col_types = FALSE)\n\n# cleanup data\nghost &lt;- ghost |&gt; \n    janitor::clean_names() |&gt; \n    janitor::remove_empty() |&gt; \n    filter(!is.na(plays), plays &gt; 0) |&gt; \n    filter(!is.na(duration), !is.na(plays)) |&gt; \n    rename(duration = time)\n\nvalue for \"which\" not specified, defaulting to c(\"rows\", \"cols\")\n\n\nWarning: There was 1 warning in `filter()`.\nℹ In argument: `!is.na(duration)`.\nCaused by warning in `is.na()`:\n! is.na() applied to non-(list or vector) of type 'closure'\n\nghost |&gt; \n  head()\n\n# A tibble: 6 × 22\n  name        artist composer album genre   size duration disc_number disc_count\n  &lt;chr&gt;       &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;\n1 Imperium    Ghost  A Ghoul… IMPE… Metal 4.10e6      100           1          1\n2 Kaisarion   Ghost  A Ghoul… IMPE… Metal 1.08e7      302           1          1\n3 Spillways   Ghost  A Ghoul… IMPE… Metal 7.46e6      196           1          1\n4 Call Me Li… Ghost  A Ghoul… IMPE… Metal 1.07e7      284           1          1\n5 Hunter’s M… Ghost  A Ghoul… IMPE… Metal 7.58e6      196           1          1\n6 Watcher In… Ghost  A Ghoul… IMPE… Metal 1.27e7      348           1          1\n# ℹ 13 more variables: track_number &lt;dbl&gt;, track_count &lt;dbl&gt;, year &lt;dbl&gt;,\n#   date_modified &lt;chr&gt;, date_added &lt;chr&gt;, bit_rate &lt;dbl&gt;, sample_rate &lt;dbl&gt;,\n#   kind &lt;chr&gt;, plays &lt;dbl&gt;, last_played &lt;chr&gt;, skips &lt;dbl&gt;,\n#   last_skipped &lt;chr&gt;, location &lt;chr&gt;\n\n\nPlot the data in a histogram.\n\nggplot(ghost, aes(x=plays, fill=album)) +\n    geom_histogram(binwidth=5, na.rm = TRUE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe data is significantly right-skewed, therefore, the median will likely be more accurate here.\n\n\nNext, I create a table of some useful values.\n\nghost &lt;- ghost |&gt; \n  mutate(total_seconds = duration * plays)\nghost |&gt;\n  summarise(\n    meadian_plays = median(plays),\n    mean_plays = mean(plays),\n    total_plays = sum(plays),\n    total_hours = sum(total_seconds, na.rm = TRUE) / 3600\n  ) |&gt; \n  kable()\n\n\n\n\nmeadian_plays\nmean_plays\ntotal_plays\ntotal_hours\n\n\n\n\n5\n27.91525\n1647\n117.8828"
   }
 ]

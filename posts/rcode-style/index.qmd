@@ -1,0 +1,52 @@
+---
+title: "Blog Code Style Guide"
+author: "Aiden Ross"
+date: "03/06/26"
+format: html
+---
+
+# purpose 
+
+This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent.
+
+# variable and function names
+
+## single char names
+
+Often, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.
+
+```{r}
+# simplistic for short code 
+
+x <- 10
+x 
+```
+
+## snake case 
+Snake case is usually clear and easy to read for short blocks of code.
+
+```{r}
+
+# be specific given some context
+some_variable <- 1203
+
+some_variable
+
+```
+
+## pascal case
+
+Pascal case is preferred for functions in rcode. 
+
+```{r}
+
+# a function name should state its purpose
+# also do note that this primarily
+# is to be able to tell functions I write from library functions
+SquaredValue <- function(x) {
+    return (x * x)
+}
+
+SquaredValue(5)
+
+```

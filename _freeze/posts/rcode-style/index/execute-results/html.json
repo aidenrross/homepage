@@ -1,0 +1,15 @@
+{
+  "hash": "14347aac3164cb4bbc031a030e6b8243",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Blog Code Style Guide\"\nauthor: \"Aiden Ross\"\ndate: \"03/06/26\"\nformat: html\n---\n\n# purpose \n\nThis page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent.\n\n# variable and function names\n\n## single char names\n\nOften, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# simplistic for short code \n\nx <- 10\nx \n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 10\n```\n\n\n:::\n:::\n\n\n## snake case \nSnake case is usually clear and easy to read for short blocks of code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# be specific given some context\nsome_variable <- 1203\n\nsome_variable\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 1203\n```\n\n\n:::\n:::\n\n\n## pascal case\n\nPascal case is preferred for functions in rcode. \n\n\n::: {.cell}\n\n```{.r .cell-code}\n# a function name should state its purpose\n# also do note that this primarily\n# is to be able to tell functions I write from library functions\nSquaredValue <- function(x) {\n    return (x * x)\n}\n\nSquaredValue(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 25\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

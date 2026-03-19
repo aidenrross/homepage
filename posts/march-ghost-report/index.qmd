@@ -1,0 +1,70 @@
+---
+title: "Ghost Listening Report"
+author: "Aiden Ross"
+date: "03.15.2026"
+date-modified: last-modified
+categories: 
+    - ghost
+    - data 
+    - code
+format:
+    html:
+        theme: solar
+---
+
+# Data Analysis
+
+Import any needed libraries.
+
+```{r}
+#| message: false
+#| warning: false
+#| 
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(moderndive)
+```
+
+As usual I import the data from my apple music.
+
+```{r}
+ghost <- read_tsv("Ghost.txt", show_col_types = FALSE)
+
+# cleanup data
+ghost <- ghost |> 
+    janitor::clean_names() |> 
+    janitor::remove_empty() |> 
+    filter(!is.na(plays), plays > 0) |> 
+    filter(!is.na(duration), !is.na(plays)) |> 
+    rename(duration = time)
+
+ghost |> 
+  head()
+```
+
+Plot the data in a histogram.
+
+```{r}
+ggplot(ghost, aes(x=plays, fill=album)) +
+    geom_histogram(binwidth=5, na.rm = TRUE)
+```
+
+::: callout-note
+The data is significantly right-skewed, therefore, the median will likely be more accurate here.
+:::
+
+Next, I create a table of some useful values.
+
+```{r}
+ghost <- ghost |> 
+  mutate(total_seconds = duration * plays)
+ghost |>
+  summarise(
+    meadian_plays = median(plays),
+    mean_plays = mean(plays),
+    total_plays = sum(plays),
+    total_hours = sum(total_seconds, na.rm = TRUE) / 3600
+  ) |> 
+  kable()
+```

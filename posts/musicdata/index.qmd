@@ -22,11 +22,13 @@ Create a new playlist with the songs or album you want data from.
 
 ## Export to Text File
 
-::: {.callout-note} 
-    Choose plain text unicode will not work for imports
+::: callout-note
+```         
+Choose plain text unicode will not work for imports
+```
 :::
-![](images/ghost%20-%20step%202.png){width="363"} ![](images/ghost%20-%20step%203.png){width="363"}
-![](images/ghost%20-%20step%205.png){width="363"} ![](images/ghost%20-%20step%206.png){width="363"} \# Analysis of apple music with R
+
+![](images/ghost%20-%20step%202.png){width="363"} ![](images/ghost%20-%20step%203.png){width="363"} ![](images/ghost%20-%20step%205.png){width="363"} ![](images/ghost%20-%20step%206.png){width="363"} \# Analysis of apple music with R
 
 ```{r}
 library(tidyverse)

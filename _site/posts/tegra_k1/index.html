@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aiden Ross">
+<meta name="dcterms.date" content="2026-03-09">
 
-<title>Aiden’s server – Aiden's Pages</title>
+<title>What can a Tegra K1 do in 2026? – Aiden’s Pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +22,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2eb1db9b6f96988fbe41f1d8a082b222.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2eb1db9b6f96988fbe41f1d8a082b222.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +90,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<meta name="quarto:status" content="draft">
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Aiden's Pages" href="index.xml" data-external="1"></head>
-
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Aiden’s Pages</span>
     </a>
   </div>
@@ -153,7 +116,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,226 +129,78 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Aiden’s server</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">What can a Tegra K1 do in 2026?</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aiden Ross </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 9, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YQ==">data <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z2hvc3Q=">ghost <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mbw==">info <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGh5cGhveA==">phyphox <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3RhdGlzdGljcw==">statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aW5mbw==" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1772833753842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail"><a href="./posts/aboutadmin/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/aboutadmin/images/loulou_small.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/aboutadmin/index.html" class="no-external">The server admin</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mbw=='); return false;">info</div>
-
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>First, I have attached an image of the board below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="IMG_0070.jpeg" class="img-fluid figure-img" width="500"></p>
+<figcaption>The TEGRA K1 board.</figcaption>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./posts/aboutadmin/index.html" class="no-external">
-<strong>Lou-Lou</strong> is an amazing little <strong>American Bulldog</strong> who is energetic and quick to action. If the server goes down she’s on the case.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/aboutadmin/index.html" class="no-external">
-<div class="listing-date">
-Feb 16, 2026
-</div>
-<div class="listing-author">
-Aiden Ross
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1772833020997" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
+<p>At the time this little board pushed a full desktop architecture for its GPU. <span class="citation" data-cites="TegraWhitePapers">(<a href="#ref-TegraWhitePapers" role="doc-biblioref">NVIDIA 2013</a>)</span></p>
+<ul>
+<li>Tegra K1
+<ul>
+<li>Cortex A15 4-PLUS-1 processor</li>
+<li>Keplar GPU with 192 Cuda cores</li>
+<li>2 GB ram</li>
+<li>Support for opengl 4.4</li>
+<li>Support for CUDA 6.6</li>
+<li>Support for DirectX 11</li>
+</ul></li>
+</ul>
+</section>
+<section id="gaming" class="level1">
+<h1>Gaming</h1>
+<p>Nvidia with this board claimed it was more powerful than the xbox360 and ps3(without accounting for spus) <span class="citation" data-cites="TegraWhitePages">(see <a href="#ref-TegraWhitePages" role="doc-biblioref"><strong>TegraWhitePages?</strong></a>)</span>. I would like to test this claim; I will account for the overhead in processing for arm and linux compatibility from windows titles.</p>
 
-<p class="card-img-top"><img src="posts/welcome/images/sugarplum_small.jpg"  class="thumbnail-image card-img"/></p>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To ross2006.org and sugerplum.uk</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
+</section>
 
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-TegraWhitePapers" class="csl-entry" role="listitem">
+NVIDIA. 2013. <span>“Whitepaper-NVIDIA Tegra K1-a New Era in Mobile Computing.”</span> 2013. <a href="https://www.nvidia.com/content/PDF/tegra_white_papers/tegra-K1-whitepaper.pdf">https://www.nvidia.com/content/PDF/tegra_white_papers/tegra-K1-whitepaper.pdf</a>.
 </div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-<em>Pictured above is the source of the domain sugerplum.uk</em>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Feb 16, 2026
-</div>
-<div class="listing-author">
-Aiden Ross
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ZGF0YSUyQ3N0YXRpc3RpY3MlMkNwaHlwaG94" data-listing-date-sort="1771372800000" data-listing-file-modified-sort="1772473776369" data-listing-date-modified-sort="1772473776000" data-listing-reading-time-sort="3" data-listing-word-count-sort="505">
-<div class="thumbnail"><a href="./posts/phyphox/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/phyphox/index_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/phyphox/index.html" class="no-external">How to Import and Analyze Phyphox CSV Data in RStudio</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YQ=='); return false;">data</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGh5cGhveA=='); return false;">phyphox</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/phyphox/index.html" class="no-external">
-The phyphox app is a really cool way to collect your own data. You can read more about it here: phyphox
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/phyphox/index.html" class="no-external">
-<div class="listing-date">
-Feb 18, 2026
-</div>
-<div class="listing-author">
-Aiden Ross
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="ZGF0YSUyQ3R1dG9yaWFsJTJDY29kZQ==" data-listing-date-sort="1771718400000" data-listing-file-modified-sort="1773626751694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
-<div class="thumbnail"><a href="./posts/musicdata/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/musicdata/images/ghost - step 1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/musicdata/index.html" class="no-external">Collecting Listening Data with Apple Music</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YQ=='); return false;">data</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">tutorial</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/musicdata/index.html" class="no-external">
-<em>This requires a mac of some type.</em>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/musicdata/index.html" class="no-external">
-<div class="listing-date">
-Feb 22, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1772755200000" data-listing-file-modified-sort="1772850813631" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="154">
-<div class="thumbnail"><a href="./posts/rcode-style/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/rcode-style/index.html" class="no-external">Blog Code Style Guide</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/rcode-style/index.html" class="no-external">
-This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/rcode-style/index.html" class="no-external">
-<div class="listing-date">
-Mar 6, 2026
-</div>
-<div class="listing-author">
-Aiden Ross
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Z2hvc3QlMkNkYXRhJTJDY29kZQ==" data-listing-date-sort="1773532800000" data-listing-file-modified-sort="1773666480930" data-listing-date-modified-sort="1773666480000" data-listing-reading-time-sort="1" data-listing-word-count-sort="152">
-<div class="thumbnail"><a href="./posts/march-ghost-report/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/march-ghost-report/index_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/march-ghost-report/index.html" class="no-external">Ghost Listening Report</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2hvc3Q='); return false;">ghost</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YQ=='); return false;">data</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/march-ghost-report/index.html" class="no-external">
-Import any needed libraries.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/march-ghost-report/index.html" class="no-external">
-<div class="listing-date">
-Mar 15, 2026
-</div>
-<div class="listing-author">
-Aiden Ross
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
