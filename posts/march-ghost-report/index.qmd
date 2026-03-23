@@ -12,9 +12,13 @@ format:
         theme: solar
 ---
 
+# Music Habits
+
+This is my current listening data from apple music for the band *Ghost*.
+
 # Data Analysis
 
-Import any needed libraries.
+Import any necessary libraries.
 
 ```{r}
 #| message: false
@@ -26,7 +30,7 @@ library(knitr)
 library(moderndive)
 ```
 
-As usual I import the data from my apple music.
+As usual, I import the data from my apple music account. 
 
 ```{r}
 ghost <- read_tsv("Ghost.txt", show_col_types = FALSE)
@@ -51,7 +55,7 @@ ggplot(ghost, aes(x=plays, fill=album)) +
 ```
 
 ::: callout-note
-The data is significantly right-skewed, therefore, the median will likely be more accurate here.
+The data is **uni-model** and **right-skewed**, therefore, the **median** will be used here.
 :::
 
 Next, I create a table of some useful values.
@@ -61,10 +65,18 @@ ghost <- ghost |>
   mutate(total_seconds = duration * plays)
 ghost |>
   summarise(
-    meadian_plays = median(plays),
+    median_plays = median(plays),
     mean_plays = mean(plays),
     total_plays = sum(plays),
     total_hours = sum(total_seconds, na.rm = TRUE) / 3600
   ) |> 
   kable()
 ```
+
+These values tell us that:
+
+    - 50% of songs are played less than 5 times.
+    - across the selection of music, if the plays were evenly distributed, then the average number of plays would be $~28$ times.
+    - the combined number of plays across all songs is $1647$.
+    - I spent about $118$ hours listening.
+  

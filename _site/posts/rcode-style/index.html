@@ -182,13 +182,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="purpose" class="level1">
 <h1>purpose</h1>
-<p>This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent.</p>
+<p>This page is intended to be a living document. As preferences change and I become more informed, I may update certain aspects. This document defines the structure I expect and helps enforce consistency in my code.</p>
 </section>
 <section id="variable-and-function-names" class="level1">
 <h1>variable and function names</h1>
 <section id="single-char-names" class="level2">
 <h2 class="anchored" data-anchor-id="single-char-names">single char names</h2>
-<p>Often, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.</p>
+<p>R is often used for quick computations. If a value is not needed beyond a single step, single-character variable names are acceptable.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># simplistic for short code </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -214,16 +214,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pascal-case" class="level2">
 <h2 class="anchored" data-anchor-id="pascal-case">pascal case</h2>
-<p>Pascal case is preferred for functions in rcode.</p>
+<p>Pascal case is my preferred style for functions in rcode. This convention also helps distinguish user-defined functions from library functions.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a function name should state its purpose</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># also do note that this primarily</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># is to be able to tell functions I write from library functions</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>SquaredValue <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (x <span class="sc">*</span> x)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">SquaredValue</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>SquaredValue <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (x <span class="sc">*</span> x)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">SquaredValue</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>

@@ -5,15 +5,15 @@ date: "03/06/26"
 format: html
 ---
 
-# purpose 
+# purpose
 
-This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent.
+This page is intended to be a living document. As preferences change and I become more informed, I may update certain aspects. This document defines the structure I expect and helps enforce consistency in my code. 
 
 # variable and function names
 
 ## single char names
 
-Often, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.
+R is often used for quick computations. If a value is not needed beyond a single step, single-character variable names are acceptable.
 
 ```{r}
 # simplistic for short code 
@@ -22,7 +22,8 @@ x <- 10
 x 
 ```
 
-## snake case 
+## snake case
+
 Snake case is usually clear and easy to read for short blocks of code.
 
 ```{r}
@@ -36,13 +37,12 @@ some_variable
 
 ## pascal case
 
-Pascal case is preferred for functions in rcode. 
+Pascal case is my preferred style for functions in rcode. This convention also helps distinguish user-defined functions from library functions.
 
 ```{r}
 
 # a function name should state its purpose
-# also do note that this primarily
-# is to be able to tell functions I write from library functions
+
 SquaredValue <- function(x) {
     return (x * x)
 }

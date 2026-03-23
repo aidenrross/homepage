@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">March 16, 2026</p>
+        <p class="date-modified">March 20, 2026</p>
       </div>
     </div>
       
@@ -191,16 +191,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="music-habits" class="level1">
+<h1>Music Habits</h1>
+<p>This is my current listening data from apple music for the band <em>Ghost</em>.</p>
+</section>
 <section id="data-analysis" class="level1">
 <h1>Data Analysis</h1>
-<p>Import any needed libraries.</p>
+<p>Import any necessary libraries.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moderndive)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>As usual I import the data from my apple music.</p>
+<p>As usual, I import the data from my apple music account.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ghost <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"Ghost.txt"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -260,7 +264,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data is significantly right-skewed, therefore, the median will likely be more accurate here.</p>
+<p>The data is <strong>uni-model</strong> and <strong>right-skewed</strong>, therefore, the <strong>median</strong> will be used here.</p>
 </div>
 </div>
 <p>Next, I create a table of some useful values.</p>
@@ -269,7 +273,7 @@ Note
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_seconds =</span> duration <span class="sc">*</span> plays)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ghost <span class="sc">|&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">meadian_plays =</span> <span class="fu">median</span>(plays),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_plays =</span> <span class="fu">median</span>(plays),</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_plays =</span> <span class="fu">mean</span>(plays),</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_plays =</span> <span class="fu">sum</span>(plays),</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_hours =</span> <span class="fu">sum</span>(total_seconds, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="dv">3600</span></span>
@@ -279,7 +283,7 @@ Note
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">meadian_plays</th>
+<th style="text-align: right;">median_plays</th>
 <th style="text-align: right;">mean_plays</th>
 <th style="text-align: right;">total_plays</th>
 <th style="text-align: right;">total_hours</th>
@@ -296,6 +300,11 @@ Note
 </table>
 </div>
 </div>
+<p>These values tell us that:</p>
+<pre><code>- 50% of songs are played less than 5 times.
+- across the selection of music, if the plays were evenly distributed, then the average number of plays would be $~28$ times.
+- the combined number of plays across all songs is $1647$.
+- I spent about $118$ hours listening.</code></pre>
 
 
 </section>

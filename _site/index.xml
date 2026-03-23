@@ -21,9 +21,13 @@
 
 
 
+<section id="music-habits" class="level1">
+<h1>Music Habits</h1>
+<p>This is my current listening data from apple music for the band <em>Ghost</em>.</p>
+</section>
 <section id="data-analysis" class="level1">
 <h1>Data Analysis</h1>
-<p>Import any needed libraries.</p>
+<p>Import any necessary libraries.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -38,7 +42,7 @@ font-style: inherit;">library</span>(knitr)</span>
 background-color: null;
 font-style: inherit;">library</span>(moderndive)</span></code></pre></div></div>
 </div>
-<p>As usual I import the data from my apple music.</p>
+<p>As usual, I import the data from my apple music account.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">ghost <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -178,7 +182,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data is significantly right-skewed, therefore, the median will likely be more accurate here.</p>
+<p>The data is <strong>uni-model</strong> and <strong>right-skewed</strong>, therefore, the <strong>median</strong> will be used here.</p>
 </div>
 </div>
 <p>Next, I create a table of some useful values.</p>
@@ -203,7 +207,7 @@ background-color: null;
 font-style: inherit;">summarise</span>(</span>
 <span id="cb8-5">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">meadian_plays =</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">median_plays =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">median</span>(plays),</span>
 <span id="cb8-6">    <span class="at" style="color: #657422;
@@ -239,7 +243,7 @@ font-style: inherit;">kable</span>()</span></code></pre></div></div>
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">meadian_plays</th>
+<th style="text-align: right;">median_plays</th>
 <th style="text-align: right;">mean_plays</th>
 <th style="text-align: right;">total_plays</th>
 <th style="text-align: right;">total_hours</th>
@@ -256,6 +260,11 @@ font-style: inherit;">kable</span>()</span></code></pre></div></div>
 </table>
 </div>
 </div>
+<p>These values tell us that:</p>
+<pre><code>- 50% of songs are played less than 5 times.
+- across the selection of music, if the plays were evenly distributed, then the average number of plays would be $~28$ times.
+- the combined number of plays across all songs is $1647$.
+- I spent about $118$ hours listening.</code></pre>
 
 
 </section>
@@ -279,13 +288,13 @@ font-style: inherit;">kable</span>()</span></code></pre></div></div>
 
 <section id="purpose" class="level1">
 <h1>purpose</h1>
-<p>This page is intended to be a living document. As preferences changes and I become more informed I may update certain things. Roughly, this is supposed to be a place to show the structure to expect and more importantly to keep me consistent.</p>
+<p>This page is intended to be a living document. As preferences change and I become more informed, I may update certain aspects. This document defines the structure I expect and helps enforce consistency in my code.</p>
 </section>
 <section id="variable-and-function-names" class="level1">
 <h1>variable and function names</h1>
 <section id="single-char-names" class="level2">
 <h2 class="anchored" data-anchor-id="single-char-names">single char names</h2>
-<p>Often, rcode is used for quick computations; As long as the value is not important beyond a single chunk I will allow the use of single character variable names.</p>
+<p>R is often used for quick computations. If a value is not needed beyond a single step, single-character variable names are acceptable.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -323,31 +332,26 @@ font-style: inherit;">1203</span></span>
 </section>
 <section id="pascal-case" class="level2">
 <h2 class="anchored" data-anchor-id="pascal-case">pascal case</h2>
-<p>Pascal case is preferred for functions in rcode.</p>
+<p>Pascal case is my preferred style for functions in rcode. This convention also helps distinguish user-defined functions from library functions.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># a function name should state its purpose</span></span>
-<span id="cb5-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># also do note that this primarily</span></span>
-<span id="cb5-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># is to be able to tell functions I write from library functions</span></span>
-<span id="cb5-4">SquaredValue <span class="ot" style="color: #003B4F;
+<span id="cb5-2"></span>
+<span id="cb5-3">SquaredValue <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span>(x) {</span>
-<span id="cb5-5">    <span class="fu" style="color: #4758AB;
+<span id="cb5-4">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">return</span> (x <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> x)</span>
-<span id="cb5-6">}</span>
-<span id="cb5-7"></span>
-<span id="cb5-8"><span class="fu" style="color: #4758AB;
+<span id="cb5-5">}</span>
+<span id="cb5-6"></span>
+<span id="cb5-7"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">SquaredValue</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
