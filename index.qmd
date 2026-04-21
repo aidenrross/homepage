@@ -1,5 +1,4 @@
 ---
-title: "Aiden's server" 
 listing:
   contents: posts
   feed: true

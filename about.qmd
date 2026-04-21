@@ -1,13 +1,14 @@
 ---
-title: "About"
+title: "Aiden R. Ross"
+
 about:
   template: jolla
   links:
-    - icon: github
+    - icon: git 
       text: Gitea
-      href: https://git.sugerplum.uk/
-    - text: Website Source
-      icon: github
-      href: https://git.sugerplum.uk/aidenrross/homepage
+      href: https://git.sugerplum.uk/aidenrross
+    - icon: github
+      text: Github 
+      href: https://github.com/aidenrross
 ---
-
+This is a simple self-hosted blog written in quarto. 
